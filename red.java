@@ -30,11 +30,14 @@ public class red extends Actor
         if (Greenfoot.isKeyDown("up") && onGround) {
             jump();
         }
-        if (Greenfoot.isKeyDown("left")) {
+            if (Greenfoot.isKeyDown("left")) {
             move(-5);
+            checkSideCollision(-5);
+
         }
         if (Greenfoot.isKeyDown("right")) {
             move(5);
+            checkSideCollision(5);
         }
 
 
@@ -62,6 +65,22 @@ public class red extends Actor
             onGround = false;
     
         }
+        Actor platformAbove = getOneObjectAtOffset(0, -(getImage().getHeight() / 2 + 1), platform.class);
+        if (platformAbove != null && velocityY < 0) {
+            velocityY = 0;
+            setLocation(getX(), platformAbove.getY() + platformAbove.getImage().getHeight() / 2 + getImage().getHeight() / 2);
+        }    
     }
-}
+    private void checkSideCollision(int dx) {    
+        Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
+        if (platformSide != null) {
+            if (dx < 0) {
+                setLocation(platformSide.getX() + platformSide.getImage().getWidth() / 2 + getImage().getWidth() / 2, getY());
+            } else if (dx > 0) {
+                setLocation(platformSide.getX() - platformSide.getImage().getWidth() / 2 - getImage().getWidth() / 2, getY());
+            }
+            
+        }
+        }}
+        
 
