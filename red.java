@@ -11,9 +11,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class red extends Actor
 {
     
-    private int velocityY = 0;
+    private int velocityY = -1;
     private int acceleration = 1;
-    private int jumpStrength = -15;
+    private int jumpStrength = -20;
     private boolean onGround = false;
     /**
      * Act - do whatever the red wants to do. This method is called whenever
@@ -31,27 +31,28 @@ public class red extends Actor
             jump();
         }
             if (Greenfoot.isKeyDown("left")) {
-            move(-5);
             checkSideCollision(-5);
+                move(-5);
 
         }
         if (Greenfoot.isKeyDown("right")) {
-            move(5);
             checkSideCollision(5);
+            move(5);
         }
 
 
     }
 
     public void applyGravity() {
-        if (!onGround) {
+        if (!onGround && acceleration<1); {
             setLocation(getX(), getY() + velocityY);
             velocityY += acceleration;
+            
         }
     }
 
     public void jump() {
-        velocityY = -20;
+        velocityY = -14;
         onGround = false;
     }
 
@@ -65,11 +66,7 @@ public class red extends Actor
             onGround = false;
     
         }
-        Actor platformAbove = getOneObjectAtOffset(0, -(getImage().getHeight() / 2 + 1), platform.class);
-        if (platformAbove != null && velocityY < 0) {
-            velocityY = 0;
-            setLocation(getX(), platformAbove.getY() + platformAbove.getImage().getHeight() / 2 + getImage().getHeight() / 2);
-        }    
+        
     }
     private void checkSideCollision(int dx) {    
         Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
