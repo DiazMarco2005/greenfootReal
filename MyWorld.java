@@ -225,5 +225,7 @@ public class MyWorld extends World
         platformB6.setLocation(140,565);
         platformB6.setLocation(131,568);
         platformB6.setLocation(129,561);
+        YellowIdle yellowIdle = new YellowIdle();
+        addObject(yellowIdle,83,359);
     }
 }
