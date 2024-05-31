@@ -43,6 +43,9 @@ public class MyWorld extends World
         red player = new red();
         addObject(player, 120, 200);
 
+        YellowIdle yellowIdle = new YellowIdle();
+        addObject(yellowIdle,83,359);
+
         // Crear y agregar plataformas al mundo
 
         PlatformC platformC = new PlatformC();
@@ -225,8 +228,7 @@ public class MyWorld extends World
         platformB6.setLocation(140,565);
         platformB6.setLocation(131,568);
         platformB6.setLocation(129,561);
-        YellowIdle yellowIdle = new YellowIdle();
-        addObject(yellowIdle,83,359);
+
         platformA12.setLocation(225,500);
         platformA12.setLocation(192,502);
         platformA14.setLocation(280,457);
@@ -291,5 +293,9 @@ public class MyWorld extends World
         platformB.setLocation(398,641);
         platformB2.setLocation(509,637);
         platformL.setLocation(436,775);
+        platformB2.setLocation(526,643);
+        platformC3.setLocation(697,473);
+        platformC3.setLocation(682,474);
+        platformC3.setLocation(693,475);
     }
 }

@@ -25,6 +25,7 @@ public class red extends Actor
         checkKeys();
         applyGravity();
         checkPlatformCollision();
+        
     }
     private void checkKeys() {
         if (Greenfoot.isKeyDown("up") && onGround) {
@@ -67,16 +68,6 @@ public class red extends Actor
     
         }
         
-    }
-    public void eatCos(){
-        Actor CHN;
-        CHN = getOneObjectAtOffset(0, 0, YellowIdle.class);
-        if (CHN != null)
-        {
-            World world;
-            world = getWorld();
-            world.removeObject(CHN);}
-    
     }
     
     private void checkSideCollision(int dx) {    

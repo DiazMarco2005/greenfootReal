@@ -25,8 +25,9 @@ public class YellowIdle extends Actor
         checkKeys();
         applyGravity();
         checkPlatformCollision();
+        CreateCos();
     }
-    private void checkKeys() {
+    public void checkKeys() {
         if (Greenfoot.isKeyDown("w") && onGround) {
             jump();
         }
@@ -62,23 +63,37 @@ public class YellowIdle extends Actor
             velocityY = 0;
             onGround = true;
             setLocation(getX(), platformBelow.getY() - getImage().getHeight() / 2);
-        } else {
+        } 
+        else {
             onGround = false;
     
         }
         
     }
-    private void checkSideCollision(int dx) {    
+    
+    public void checkSideCollision(int dx) {    
         Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
         if (platformSide != null) {
             if (dx < 0) {
                 setLocation(platformSide.getX() + platformSide.getImage().getWidth() / 2 + getImage().getWidth() / 2, getY());
-            } else if (dx > 0) {
+            } 
+            else if (dx > 0) {
                 setLocation(platformSide.getX() - platformSide.getImage().getWidth() / 2 - getImage().getWidth() / 2, getY());
             }
             
         }
-        }}
+        }
         
-
-
+    private void CreateCos(){
+        Actor Am;
+        Am = getOneObjectAtOffset(0, 0, red.class);
+        if (Am != null){
+            World world = getWorld();
+            int x = getX();
+            int y = getY();
+            world.removeObject(this);  // Eliminar el jugador amarillo
+            world.addObject(new Cosm(), x, y); 
+        }   
+        }
+    }
+        
