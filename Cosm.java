@@ -16,7 +16,18 @@ public class Cosm extends YellowIdle
     {
         checkKeys();
         applyGravity();
-        checkPlatformCollision();// Add your action code here.
+        checkPlatformCollision();
+        checkForRevertItem();// Add your action code here.
     }
-    
+    private void checkForRevertItem() {
+        Actor revertItem = getOneObjectAtOffset(0, 0, RevertItem.class);
+        if (revertItem != null) {
+            World world = getWorld();
+            int x = getX();
+            int y = getY();
+            world.removeObject(this);
+            world.addObject(new YellowIdle(), x, y);  // Revertir a la clase original
+            world.removeObject(revertItem);
+        }
+    }
 }

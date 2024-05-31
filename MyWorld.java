@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private int spawnTimer = 0;
+    private int spawnInterval = 600;  // 600 acts = 10 seconds
     public MyWorld() {    
         super(800, 800, 1); // Tamaño del mundo (ancho, alto, tamaño de celda)
         setBackgroundImageCentered("fondo.jpeg");
@@ -297,5 +298,20 @@ public class MyWorld extends World
         platformC3.setLocation(697,473);
         platformC3.setLocation(682,474);
         platformC3.setLocation(693,475);
+        RevertItem revertItem = new RevertItem();
+        addObject(revertItem,254,454);
+    }
+    private void addRandomRevertItem() {
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = Greenfoot.getRandomNumber(getHeight());
+        RevertItem revertItem = new RevertItem();
+        addObject(revertItem, x, y);
+    }
+    public void act() {
+        spawnTimer++;
+        if (spawnTimer >= spawnInterval) {
+            addRandomRevertItem();
+            spawnTimer = 0;
+        }
     }
 }
