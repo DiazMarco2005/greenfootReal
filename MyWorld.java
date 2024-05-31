@@ -41,7 +41,7 @@ public class MyWorld extends World
     private void prepare() {
         // Crear y agregar el jugador al mundo
         red player = new red();
-        addObject(player, 100, 200);
+        addObject(player, 120, 200);
 
         // Crear y agregar plataformas al mundo
 
@@ -227,5 +227,69 @@ public class MyWorld extends World
         platformB6.setLocation(129,561);
         YellowIdle yellowIdle = new YellowIdle();
         addObject(yellowIdle,83,359);
+        platformA12.setLocation(225,500);
+        platformA12.setLocation(192,502);
+        platformA14.setLocation(280,457);
+        removeObject(platformA14);
+        platformA12.setLocation(200,505);
+        removeObject(platformA12);
+        removeObject(platformA11);
+        PLatformD pLatformD = new PLatformD();
+        addObject(pLatformD,173,483);
+        pLatformD.setLocation(199,500);
+        platformA13.setLocation(267,513);
+        platformA7.setLocation(730,173);
+        platformB5.setLocation(72,195);
+        platformB4.setLocation(42,181);
+        removeObject(platformB4);
+        PlatformC platformC6 = new PlatformC();
+        addObject(platformC6,288,221);
+        platformC6.setLocation(14,180);
+        platformA10.setLocation(438,514);
+        platformC.setLocation(523,517);
+        platformB3.setLocation(593,471);
+        platformC3.setLocation(699,470);
+        platformA6.setLocation(748,554);
+        platformB7.setLocation(658,556);
+        removeObject(platformB12);
+        platformB.setLocation(407,647);
+        platformB2.setLocation(530,643);
+        platformB6.setLocation(117,558);
+        removeObject(platformB6);
+        PlatformH platformH3 = new PlatformH();
+        addObject(platformH3,74,565);
+        platformH3.setLocation(54,557);
+        platformB4.setLocation(135,559);
+        platformA3.setLocation(238,724);
+        platformB8.setLocation(692,655);
+        platformB8.setLocation(771,659);
+        platformB10.setLocation(705,657);
+        removeObject(platformA2);
+        platformA8.setLocation(94,417);
+        removeObject(platformA8);
+        PlatformH platformH4 = new PlatformH();
+        addObject(platformH4,89,423);
+        platformH4.setLocation(47,424);
+        platformL.setLocation(385,779);
+        PlatformC platformC7 = new PlatformC();
+        addObject(platformC7,275,529);
+        platformC7.setLocation(113,554);
+        platformC7.setLocation(122,557);
+        platformC7.setLocation(131,557);
+        removeObject(platformC7);
+        PlatformB platformB13 = new PlatformB();
+        addObject(platformB13,359,562);
+        platformB13.setLocation(130,561);
+        platformB13.setLocation(136,559);
+        platformL.setLocation(409,778);
+        platformA10.setLocation(409,523);
+        platformA10.setLocation(409,519);
+        platformL.setLocation(397,783);
+        platformL.setLocation(357,796);
+        platformL.setLocation(559,781);
+        platformA10.setLocation(446,518);
+        platformB.setLocation(398,641);
+        platformB2.setLocation(509,637);
+        platformL.setLocation(436,775);
     }
 }

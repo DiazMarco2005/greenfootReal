@@ -14,7 +14,7 @@ public class PlatformL extends platform
      */
     public PlatformL() {
         GreenfootImage image = new GreenfootImage("platform.jpeg");
-        image.scale(375, 10);// Asegúrate de tener una imagen llamada "platform.png" en la carpeta de imágenes
+        image.scale(500, 10);// Asegúrate de tener una imagen llamada "platform.png" en la carpeta de imágenes
         setImage(image);
     }
     public void act()

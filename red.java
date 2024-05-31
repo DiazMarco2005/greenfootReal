@@ -68,6 +68,17 @@ public class red extends Actor
         }
         
     }
+    public void eatCos(){
+        Actor CHN;
+        CHN = getOneObjectAtOffset(0, 0, YellowIdle.class);
+        if (CHN != null)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(CHN);}
+    
+    }
+    
     private void checkSideCollision(int dx) {    
         Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
         if (platformSide != null) {
