@@ -13,7 +13,7 @@ public class YellowIdle extends Actor
     
     private int velocityY = -1;
     private int acceleration = 1;
-    private int jumpStrength = -20;
+    private int jumpStrength = -23;
     private boolean onGround = false;
     /**
      * Act - do whatever the red wants to do. This method is called whenever
