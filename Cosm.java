@@ -17,6 +17,7 @@ public class Cosm extends YellowIdle
         checkKeys();
         applyGravity();
         checkPlatformCollision();
+        checkSideCollision(0);
         checkForRevertItem();// Add your action code here.
     }
     private void checkForRevertItem() {

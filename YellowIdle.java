@@ -25,6 +25,7 @@ public class YellowIdle extends Actor
         checkKeys();
         applyGravity();
         checkPlatformCollision();
+        checkSideCollision(0);
         CreateCos();
     }
     public void checkKeys() {
@@ -68,7 +69,13 @@ public class YellowIdle extends Actor
             onGround = false;
     
         }
+        Actor fixedGroundBelow = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, platform2.class);
+        if (fixedGroundBelow != null) {
+            velocityY = 0;
+            onGround = true;
+            setLocation(getX(), fixedGroundBelow.getY() - getImage().getHeight() / 2);
         
+        }
     }
     
     public void checkSideCollision(int dx) {    

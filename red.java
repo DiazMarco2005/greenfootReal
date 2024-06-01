@@ -67,9 +67,16 @@ public class red extends Actor
             onGround = false;
     
         }
+        Actor fixedGroundBelow = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, platform2.class);
+        if (fixedGroundBelow != null) {
+            velocityY = 0;
+            onGround = true;
+            setLocation(getX(), fixedGroundBelow.getY() - getImage().getHeight() / 2);
         
+        }
     }
-    
+        
+
     private void checkSideCollision(int dx) {    
         Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
         if (platformSide != null) {
@@ -80,6 +87,7 @@ public class red extends Actor
             }
             
         }
-        }}
+        }
+    }
         
 

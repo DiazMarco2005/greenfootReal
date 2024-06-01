@@ -42,10 +42,11 @@ public class MyWorld extends World
     private void prepare() {
         // Crear y agregar el jugador al mundo
         red player = new red();
-        addObject(player, 120, 200);
+        addObject(player, 720, 100);
 
         YellowIdle yellowIdle = new YellowIdle();
         addObject(yellowIdle,83,359);
+        addObject(new platform2(1000, 20), 300, 785);  // Suelo fijo
 
         // Crear y agregar plataformas al mundo
 
@@ -300,7 +301,11 @@ public class MyWorld extends World
         platformC3.setLocation(693,475);
         RevertItem revertItem = new RevertItem();
         addObject(revertItem,254,454);
+        removeObject(platformL);
+
+        yellowIdle.setLocation(78,110);
     }
+
     private void addRandomRevertItem() {
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = Greenfoot.getRandomNumber(getHeight());
