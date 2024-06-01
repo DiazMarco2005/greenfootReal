@@ -13,7 +13,7 @@ public class PlatformC extends platform
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public PlatformC() {
-        GreenfootImage image = new GreenfootImage("platform.jpeg");
+        GreenfootImage image = new GreenfootImage("platn.jpg");
         image.scale(35, 10);// Asegúrate de tener una imagen llamada "platform.png" en la carpeta de imágenes
         setImage(image);
     }

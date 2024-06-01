@@ -13,7 +13,7 @@ public class PLatformD extends platform
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public PLatformD() {
-        GreenfootImage image = new GreenfootImage("platform.jpeg");
+        GreenfootImage image = new GreenfootImage("platn.jpg");
         image.scale(195, 18);// Asegúrate de tener una imagen llamada "platform.png" en la carpeta de imágenes
         setImage(image);
     }

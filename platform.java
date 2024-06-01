@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class platform extends Actor
 {
     public platform() {
-        GreenfootImage image = new GreenfootImage("platform.jpeg");
+        GreenfootImage image = new GreenfootImage("platn.jpg");
         image.scale(300, 30);// Asegúrate de tener una imagen llamada "platform.png" en la carpeta de imágenes
         setImage(image);
     }
