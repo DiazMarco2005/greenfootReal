@@ -25,6 +25,8 @@ public class player3 extends Actor
         checkKeys();
         applyGravity();
         checkPlatformCollision();
+        CreateCos();
+
     }
     private void checkKeys() {
         if (Greenfoot.isKeyDown("g") && onGround) {
@@ -77,5 +79,15 @@ public class player3 extends Actor
                 setLocation(platformSide.getX() - platformSide.getImage().getWidth() / 2 - getImage().getWidth() / 2, getY());
             }
             
+        }}
+    public void CreateCos(){
+        Actor Am;
+        Am = getOneObjectAtOffset(0, 0, red.class);
+        if (Am != null){
+            World world = getWorld();
+            int x = getX();
+            int y = getY();
+            world.removeObject(this);  // Eliminar el jugador amarillo
+            world.addObject(new Cosm(), x, y); 
         }
         }}

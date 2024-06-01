@@ -304,12 +304,9 @@ public class MyWorld extends World
         removeObject(platformL);
 
         yellowIdle.setLocation(78,110);
-<<<<<<< HEAD
         player3 player3 = new player3();
         addObject(player3,59,358);
-=======
         yellowIdle.setLocation(36,690);
->>>>>>> a9ad6f0c439bf864624bdd8624a42f055aea5d03
     }
 
     private void addRandomRevertItem() {

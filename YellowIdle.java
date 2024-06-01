@@ -91,7 +91,7 @@ public class YellowIdle extends Actor
         }
         }
         
-    private void CreateCos(){
+    public void CreateCos(){
         Actor Am;
         Am = getOneObjectAtOffset(0, 0, red.class);
         if (Am != null){
