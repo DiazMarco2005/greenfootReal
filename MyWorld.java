@@ -42,7 +42,7 @@ public class MyWorld extends World
     private void prepare() {
         // Crear y agregar el jugador al mundo
         red player = new red();
-        addObject(player, 720, 100);
+        addObject(player, 720, 700);
 
         YellowIdle yellowIdle = new YellowIdle();
         addObject(yellowIdle,83,359);
@@ -304,6 +304,7 @@ public class MyWorld extends World
         removeObject(platformL);
 
         yellowIdle.setLocation(78,110);
+        yellowIdle.setLocation(36,690);
     }
 
     private void addRandomRevertItem() {
