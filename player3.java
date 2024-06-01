@@ -11,39 +11,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class player3 extends Actor
 {
     
-    private int velocityY = -1;
-    private int acceleration = 1;
-    private int jumpStrength = -20;
-    private boolean onGround = false;
-    /**
-     * Act - do whatever the red wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    protected int velocityY = -1;
+    protected int acceleration = 1;
+    protected int jumpStrength = -20;
+    protected boolean onGround = false;
+
+    protected String upKey = "G";
+    protected String leftKey = "V";
+    protected String rightKey = "N";
+
+
     public void act()
     {
         // Add your action code here.
-        checkKeys();
+        checkKeys2();
         applyGravity();
         checkPlatformCollision();
         CreateCos();
 
     }
-    private void checkKeys() {
-        if (Greenfoot.isKeyDown("g") && onGround) {
+    public void checkKeys2() {
+        if (Greenfoot.isKeyDown(upKey) && onGround) {
             jump();
+            
         }
-            if (Greenfoot.isKeyDown("v")) {
-            checkSideCollision(-5);
-                move(-5);
+            if (Greenfoot.isKeyDown(leftKey)) {
+            checkSideCollision(-1);
+                move(-20);
 
         }
-        if (Greenfoot.isKeyDown("n")) {
-            checkSideCollision(5);
-            move(5);
+        if (Greenfoot.isKeyDown(rightKey)) {
+            checkSideCollision(1);
+            move(20);
         }
-
-
-    }
+         }
 
     public void applyGravity() {
         if (!onGround && acceleration<1); {
@@ -70,7 +71,7 @@ public class player3 extends Actor
         }
         
     }
-    private void checkSideCollision(int dx) {    
+    public void checkSideCollision(int dx) {    
         Actor platformSide = getOneObjectAtOffset(dx, 0, platform.class);
         if (platformSide != null) {
             if (dx < 0) {
@@ -79,7 +80,8 @@ public class player3 extends Actor
                 setLocation(platformSide.getX() - platformSide.getImage().getWidth() / 2 - getImage().getWidth() / 2, getY());
             }
             
-        }}
+        }
+    }
     public void CreateCos(){
         Actor Am;
         Am = getOneObjectAtOffset(0, 0, red.class);
@@ -88,6 +90,10 @@ public class player3 extends Actor
             int x = getX();
             int y = getY();
             world.removeObject(this);  // Eliminar el jugador amarillo
-            world.addObject(new Cosm(), x, y); 
+            world.addObject(new YellowCosm(), x, y); 
+            ((MyWorld)world).incrementCosmCounter();
+            ((MyWorld)world).updateCosmCounterDisplay(); // Incrementar el contador en MyWorld
+
         }
-        }}
+        }
+    }

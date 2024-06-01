@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RevertItem extends Actor
 {
-    private int lifetime = 600;  // 600 acts assuming 60 acts per second (10 seconds)
+    private int lifetime = 60;  // 600 acts assuming 60 acts per second (10 seconds)
 
     public RevertItem() {
         GreenfootImage image = new GreenfootImage(20, 20);

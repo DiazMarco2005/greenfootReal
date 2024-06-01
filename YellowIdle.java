@@ -33,13 +33,13 @@ public class YellowIdle extends Actor
             jump();
         }
             if (Greenfoot.isKeyDown("a")) {
-            checkSideCollision(-5);
-                move(-5);
+            checkSideCollision(-1);
+                move(-20);
 
         }
         if (Greenfoot.isKeyDown("d")) {
-            checkSideCollision(5);
-            move(5);
+            checkSideCollision(1);
+            move(20);
         }
 
 
@@ -99,7 +99,10 @@ public class YellowIdle extends Actor
             int x = getX();
             int y = getY();
             world.removeObject(this);  // Eliminar el jugador amarillo
-            world.addObject(new Cosm(), x, y); 
+            world.addObject(new Cosm(), x, y);
+            ((MyWorld)world).incrementCosmCounter();
+            ((MyWorld)world).updateCosmCounterDisplay(); // Incrementar el contador en MyWorld
+
         }   
         }
     }

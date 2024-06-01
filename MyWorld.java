@@ -9,11 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private int spawnTimer = 0;
-    private int spawnInterval = 600;  // 600 acts = 10 seconds
+    private int spawnInterval = 60;  // 600 acts = 10 seconds
+    private int cosmCounter = 0;  // Contador de conversiones a Cosm
+    private Timer timer;
+
     public MyWorld() {    
         super(800, 800, 1); // Tamaño del mundo (ancho, alto, tamaño de celda)
         setBackgroundImageCentered("fondo.jpeg");
+        timer = new Timer(4, 0); 
+        addObject(timer, getWidth() / 2, 20);
+        cosmCounter = 0;
         prepare();
+        updateCosmCounterDisplay();
     }
 
     private void setBackgroundImageCentered(String filename) {
@@ -321,5 +328,26 @@ public class MyWorld extends World
             addRandomRevertItem();
             spawnTimer = 0;
         }
+    }
+     public void incrementCosmCounter() {
+        cosmCounter++;
+        if (cosmCounter >= 2) {
+            showText("¡El rojo gana!", getWidth() / 2,100);
+            Greenfoot.stop();
+
+        }
+    }
+    public void updateCosmCounterDisplay() {
+        showText("Contador de Cosm: " + cosmCounter, getWidth() / 2, 50);  // Mostrar en la parte superior central
+    }
+    public void checkGameOver() {
+        if (cosmCounter < 2) {
+            showEndMessage("¡Ganaron los amarillos!");
+            Greenfoot.stop();
+        }
+    }
+
+    private void showEndMessage(String message) {
+        showText(message, getWidth() / 2, getHeight() / 2);
     }
 }

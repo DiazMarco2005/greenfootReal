@@ -32,13 +32,13 @@ public class red extends Actor
             jump();
         }
             if (Greenfoot.isKeyDown("left")) {
-            checkSideCollision(-5);
-                move(-5);
+            checkSideCollision(-1);
+                move(-20);
 
         }
         if (Greenfoot.isKeyDown("right")) {
-            checkSideCollision(5);
-            move(5);
+            checkSideCollision(1);
+            move(20);
         }
 
 
